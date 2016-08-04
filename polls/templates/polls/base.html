@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polls</title>
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/css/app.css' %}" />
+</head>
+<body>
+
+  <div class="container-fluid">
+    {% block header %}
+      {% include 'polls/inc/header.html' %}
+    {% endblock header %}
+
+    <!-- Page Main Content -->
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+  </div>
+
+  <!--Modals-->
+  {% block modal %}{% endblock modal %}
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Extra scripts -->
+  {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>

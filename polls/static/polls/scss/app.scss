@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,700);
+
+// Sass vars
+$body-font-family: 'Oswald', Helvetica, Arial, sans-serif;
+$form-bg-color: #d3e0e0;
+$form-bg-error: #7d0202;
+$white: #FFFFFF;
+
+html, body {
+  height: 100%;
+  font-family: $body-font-family;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+}
+
+// Typo weight
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: 700;
+}
+p, span, label, a,
+ol li, ul li, small {
+  font-weight: 300;
+}
+
+// Custom Section Styles
+section {
+  
+  &.list, &.create {
+    .index-title {
+      border: none;
+      h1 {
+        font-size: 3em;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  &.create, &.detail {
+    form {
+      background-color: $form-bg-color;
+      padding: 1em;
+      border-radius: 1em;
+      .field-wrapper {
+        margin-bottom: 1em;
+        input {
+          width: 100%;
+        }
+        ul {
+          &.errorlist{
+            list-style: none;
+            padding: 0.25em 0.4em;
+            background-color: $form-bg-error;
+            li {
+              color: $white;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+}

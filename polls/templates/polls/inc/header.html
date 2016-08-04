@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'polls:index' %}">Marco Puccio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="site-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'polls:index' %}">Index Polls</a></li>
+        <li><a href="{% url 'polls:most_voted' %}">Most Voted</a></li>
+        <li><a href="{% url 'polls:create' %}">Create</a></li>
+        <li><a href="https://github.com/marsxn/bb" target="_new">Github</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

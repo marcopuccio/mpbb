@@ -1,0 +1,35 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<section class="polls detail">
+  <!-- Breads -->
+  <div class="row">
+    <div class="col-xs-12">
+      <ol class="breadcrumb">
+        <li><a href="{% url 'polls:index' %}">Polls Index</a></li>
+        <li class="active"><a href="{% url 'polls:detail' question.id %}">{{ question.question_text|title }}</a></li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-10 col-md-8 col-lg-6 col-xs-offset-1 col-md-offset-2 col-lg-offset-3 text-center">
+      <h1>{{ question.question_text }}</h1>
+    </div>
+    <div class="col-xs-10 col-md-6 col-lg-4 col-xs-offset-1 col-md-offset-3 col-lg-offset-4">
+      {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      <form class="detail-form" action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          {% for choice in question.choice_set.all %}
+          <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+          <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+          {% endfor %}
+        </div>
+        <div class="form-group text-center">
+          <input type="submit" class="btn btn-primary" value="Vote" />
+        </div>
+      </form>      
+    </div>
+  </div>
+</section>
+{% endblock content %}

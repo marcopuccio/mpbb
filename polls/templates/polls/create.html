@@ -1,0 +1,29 @@
+{% extends "polls/base.html" %}
+{% block content %}
+<section class="poll create">
+  <div class="row">
+    <div class="col-xs-12 page-header index-title">
+      <h1 class="text-center">Create</h1>
+    </div>
+    <div class="col-xs-10 col-md-8 col-lg-6 col-xs-offset-1 col-md-offset-2 col-lg-offset-3">
+      <form role="form" method="post" action="{% url 'polls:create' %}">
+        {% csrf_token %}
+        <div class="row">
+          {% for field in form %}
+          <div class="col-xs-12">
+            {{ field.label_tag }}
+            <div class="field-wrapper">
+              {{ field }}
+              {{ field.errors }}
+            </div>
+          </div>
+          {% endfor %}
+          <div class="col-xs-12 text-center">
+            <button type="submit" class="btn">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div> 
+</section>
+{% endblock content %}
