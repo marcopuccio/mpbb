@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="shop">
+  <div class="row">
+    <div class="col-xs-12 page-header index-title">
+      <h1 class="text-center">ORM Questions</h1>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 question">
+      <h4>a) Realizar una consulta para obtener la cantidad de órdenes completas agrupadas por mes</h4>
+      <pre>
+        Order.objects.\
+        extra(select={'month': 'extract( month from date_created )'}).\
+        values('month').\
+        annotate(count=Count('date_created'))
+      </pre>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 question">
+      <h4>b) Realizar una consulta para obtener el promedio de  órdenes que compró cada usuario.</h4>
+      <pre>
+        Order.objects.all().aggregate(Avg('user')).values()[0]
+      </pre>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 question">
+      <h4>c) Crear los modelos en Django necesarios para poder agregar estos productos a una orden</h4>
+      <h5><a href="https://github.com/marsxn/bb/blob/master/shop/models.py">Ver modelos en GitHub!</a></h5>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 question">
+      <h4>d) Realizar una consulta en Django para obtener la cantidad de productos vendidos de cada tipo en el último mes.</h4>
+      <pre>
+        import datetime
+
+        current_month = datetime.datetime.now().month
+        Order.objects.filter(date_created__month=current_month).values('products').annotate(count=Count('products'))
+      </pre>
+    </div>
+
+  </div> 
+</section>
+{% endblock content %}

@@ -25,36 +25,44 @@ ol li, ul li, small {
   font-weight: 300;
 }
 
-/* line 38, ../scss/app.scss */
-section.list .index-title, section.create .index-title {
+/* line 36, ../scss/app.scss */
+section .index-title {
   border: none;
 }
-/* line 40, ../scss/app.scss */
-section.list .index-title h1, section.create .index-title h1 {
+/* line 38, ../scss/app.scss */
+section .index-title h1 {
   font-size: 3em;
   letter-spacing: 2px;
 }
-/* line 48, ../scss/app.scss */
+/* line 45, ../scss/app.scss */
+section.shop .question {
+  padding-top: 4em;
+}
+/* line 47, ../scss/app.scss */
+section.shop .question pre {
+  margin-top: 1em;
+}
+/* line 54, ../scss/app.scss */
 section.create form, section.detail form {
   background-color: #d3e0e0;
   padding: 1em;
   border-radius: 1em;
 }
-/* line 52, ../scss/app.scss */
+/* line 58, ../scss/app.scss */
 section.create form .field-wrapper, section.detail form .field-wrapper {
   margin-bottom: 1em;
 }
-/* line 54, ../scss/app.scss */
+/* line 60, ../scss/app.scss */
 section.create form .field-wrapper input, section.detail form .field-wrapper input {
   width: 100%;
 }
-/* line 58, ../scss/app.scss */
+/* line 64, ../scss/app.scss */
 section.create form .field-wrapper ul.errorlist, section.detail form .field-wrapper ul.errorlist {
   list-style: none;
   padding: 0.25em 0.4em;
   background-color: #7d0202;
 }
-/* line 62, ../scss/app.scss */
+/* line 68, ../scss/app.scss */
 section.create form .field-wrapper ul.errorlist li, section.detail form .field-wrapper ul.errorlist li {
   color: #FFFFFF;
 }

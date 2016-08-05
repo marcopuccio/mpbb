@@ -33,13 +33,19 @@ ol li, ul li, small {
 
 // Custom Section Styles
 section {
-  
-  &.list, &.create {
-    .index-title {
-      border: none;
-      h1 {
-        font-size: 3em;
-        letter-spacing: 2px;
+  .index-title {
+    border: none;
+    h1 {
+      font-size: 3em;
+      letter-spacing: 2px;
+    }
+  }
+
+  &.shop {
+    .question {
+      padding-top: 4em;
+      pre {
+        margin-top: 1em;
       }
     }
   }
